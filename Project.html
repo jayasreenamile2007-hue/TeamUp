@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,0" />
     <title>TeamUp</title>
     <link rel="stylesheet" href="project.css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <script src="Project.js" defer></script>
   </head>
 
@@ -32,17 +35,20 @@
     </header>
     <!-- LANDING PAGE OR HOME -->
     <section class="Home" id="Home">
-       <div class="text">
-            <h1>MEET THE RIGHT TEAM<br>BUILD SOMETHING GREAT.</h1>
-            <p>Turn your ideas into meaningful projects by connecting
-              with passionate students.</p>
-            <p>Share your skills, discover new
-              opportunities, and work together to bring your next big
-              idea to life.</p>
-        </div>
-        <div class="hero-image">
-           <img src="img/LandingPage image.jpeg" alt="TeamUp collaboration">
-       </div>
+      <div class="text">
+        <h1>MEET THE RIGHT TEAM<br />BUILD SOMETHING GREAT.</h1>
+        <p>
+          Turn your ideas into meaningful projects by connecting with passionate
+          students.
+        </p>
+        <p>
+          Share your skills, discover new opportunities, and work together to
+          bring your next big idea to life.
+        </p>
+      </div>
+      <div class="hero-image">
+        <img src="img/LandingPage image.jpeg" alt="TeamUp collaboration" />
+      </div>
     </section>
     <section class="service" id="service">
       <div class="heading">
@@ -52,174 +58,358 @@
         <div class="box">
           <i class="bx bx-group"></i>
           <h2>Form Teams</h2>
-          <p>Find students with the skills you need and build the right team.</p>
+          <p>
+            Find students with the skills you need and build the right team.
+          </p>
         </div>
         <div class="box">
           <i class="bx bx-link"></i>
           <h2>Collaborate</h2>
-          <p>Work together, share ideas, and turn your project plans into reality.</p>
+          <p>
+            Work together, share ideas, and turn your project plans into
+            reality.
+          </p>
         </div>
         <div class="box">
           <i class="bx bx-rocket"></i>
           <h2>Discover Opportunities</h2>
-          <p>Find hackathons, projects, and opportunities to showcase your skills.</p>
+          <p>
+            Find hackathons, projects, and opportunities to showcase your
+            skills.
+          </p>
         </div>
       </div>
     </section>
     <!-- TEAM PAGE -->
     <section class="team">
-       <div class="heading">
+      <div class="heading">
         <h1>BUILD YOUR TEAM</h1>
-        <p>Discover teams looking for members and
-          join a project that interests you.</p>
-        </div>
+        <p>
+          Discover teams looking for members and join a project that interests
+          you.
+        </p>
+      </div>
       <div class="buttons">
         <button type="button" id="createTeamBtn">CREATE A TEAM</button>
         <a href="#" class="btn">FIND A TEAM</a>
       </div>
 
-  <!-- CREATE TEAM MODAL -->
-  <div class="teamModal" id="teamModal">
+      <!-- CREATE TEAM MODAL -->
+      <div class="teamModal" id="teamModal">
+        <div class="modal-content">
+          <button type="button" id="closeModal" class="close-modal">
+            &times;
+          </button>
 
-    <div class="modal-content">
-      <button type="button" id="closeModal" class="close-modal">&times;</button>
+          <h2>CREATE A TEAM</h2>
 
-      <h2>CREATE A TEAM</h2>
+          <form id="teamForm">
+            <label for="teamCreator">Team Creator:</label>
+            <input
+              type="text"
+              id="teamCreator"
+              placeholder="Your name"
+              required
+            />
 
-      <form id="teamForm">
+            <label for="hackathonName">Hackathon Name:</label>
+            <input
+              type="text"
+              id="hackathonName"
+              placeholder="Enter hackathon name"
+              required
+            />
 
-        <label for="teamCreator">Team Creator:</label>  
-        <input type="text" id="teamCreator" placeholder="Your name" required>
+            <label for="projectTitle">Project Title / Problem Statement:</label>
+            <input type="text" id="projectTitle" placeholder="Optional" />
 
-        <label for="hackathonName">Hackathon Name:</label>
-        <input type="text" id="hackathonName" placeholder="Enter hackathon name" required>
+            <label for="description">Description About Project:</label>
+            <textarea
+              id="description"
+              rows="4"
+              placeholder="Describe your project..."
+              required
+            ></textarea>
 
-        <label for="projectTitle">Project Title / Problem Statement:</label>
-        <input type="text" id="projectTitle" placeholder="Optional">
+            <label for="teamSize">Team Size:</label>
+            <input
+              type="number"
+              id="teamSize"
+              min="2"
+              placeholder="Number of members"
+              required
+            />
 
-        <label for="description">Description About Project:</label>
-        <textarea id="description" rows="4" placeholder="Describe your project..." required></textarea>
+            <label for="requiredSkills">Required Skills:</label>
+            <input
+              type="text"
+              id="requiredSkills"
+              placeholder="Example: HTML, CSS, Java, Python"
+              required
+            />
 
-        <label for="teamSize">Team Size:</label>
-        <input type="number" id="teamSize" min="2" placeholder="Number of members" required>
+            <label for="hackathonMode">Hackathon Mode:</label>
+            <select id="hackathonMode" required>
+              <option value="" disabled selected>Select Hackathon Mode</option>
+              <option value="Online">Online</option>
+              <option value="Offline">Offline</option>
+            </select>
 
-        <label for="requiredSkills">Required Skills:</label>
-        <input type="text" id="requiredSkills" placeholder="Example: HTML, CSS, Java, Python" required>
+            <!-- Venue -->
+            <div id="venueField">
+              <label for="venue">Venue:</label>
+              <input
+                type="text"
+                id="venue"
+                placeholder="Enter hackathon venue"
+              />
+            </div>
 
-        <label for="hackathonMode">Hackathon Mode:</label>
-        <select id="hackathonMode" required>
-          <option value="" disabled selected>Select Hackathon Mode</option>
-          <option value="Online">Online</option>
-          <option value="Offline">Offline</option>
-        </select>
+            <label for="duration">Duration of Hackathon:</label>
+            <input
+              type="text"
+              id="duration"
+              placeholder="Example: 24 Hours / 2 Days"
+              required
+            />
 
-        <!-- Venue -->
-        <div id="venueField">
-          <label for="venue">Venue:</label>
-          <input type="text" id="venue" placeholder="Enter hackathon venue">
+            <button type="submit" class="create-post-btn">CREATE POST</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="team-demo-posts">
+        <div class="team-demo-post">
+          <div class="post-header">
+            <h2>Smart Campus Management</h2>
+            <p>Created by: Rahul Sharma</p>
+          </div>
+          <p><strong>Hackathon:</strong> Smart India Hackathon</p>
+          <p><strong>Project Title:</strong> Smart Campus Management System</p>
+          <p class="description">
+            A project to develop a smart solution that improves campus
+            facilities and makes student life easier.
+          </p>
+
+          <div class="post-details">
+            <p><strong>Team Size:</strong> 3 / 5 Members</p>
+            <p>
+              <strong>Required Skills:</strong>
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">Python</span>
+            </p>
+            <p><strong>Mode:</strong> Offline</p>
+            <p><strong>Venue:</strong> CMRIT Hyderabad</p>
+            <p><strong>Duration:</strong> 24 Hours</p>
+            <p><strong>Created:</strong> 2 hours ago</p>
+          </div>
+
+          <div class="post-actions">
+            <button type="button"><i class="bx bx-heart"></i> Like</button>
+
+            <button type="button">
+              <i class="bx bx-comment"></i> Comments
+            </button>
+
+            <button type="button"><i class="bx bx-share"></i> Share</button>
+
+            <button type="button" class="join-btn">Join Team</button>
+          </div>
+        </div>
+        <div class="team-demo-post">
+          <div class="post-header">
+            <h2>AI Based Health Assistant</h2>
+            <p>Created by: Ananya</p>
+          </div>
+
+          <p><strong>Hackathon:</strong> Tech Innovation Challenge</p>
+          <p><strong>Project Title:</strong> AI Health Assistant</p>
+          <p class="description">
+            A smart application that uses AI to provide useful health
+            information and help users understand common health concerns.
+          </p>
+          <div class="post-details">
+            <p><strong>Team Size:</strong> 2 / 4 Members</p>
+            <p>
+              <strong>Required Skills:</strong>
+              <span class="skill">Python</span>
+              <span class="skill">AI/ML</span>
+              <span class="skill">HTML</span>
+              <span class="skill">SQL</span>
+            </p>
+
+            <p><strong>Mode:</strong> Online</p>
+            <p><strong>Duration:</strong> 48 Hours</p>
+            <p><strong>Created:</strong> 5 hours ago</p>
+          </div>
+
+          <div class="post-actions">
+            <button type="button"><i class="bx bx-heart"></i> Like</button>
+
+            <button type="button">
+              <i class="bx bx-comment"></i> Comments
+            </button>
+
+            <button type="button"><i class="bx bx-share"></i> Share</button>
+
+            <button type="button" class="join-btn">Join Team</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- COLLABORATION PAGE -->
+    <section class="collaboration" id="Collaborations">
+      <!-- Page Heading -->
+      <div class="collaboration-heading">
+        <h1>TEAM COLLABORATION</h1>
+        <p>Work together, manage tasks and communicate with your team.</p>
+      </div>
+
+      <!-- Team Information -->
+      <div class="team-info">
+        <div class="team-title">
+          <h2>Smart Campus Management</h2>
+          <p>Smart India Hackathon</p>
         </div>
 
-        <label for="duration">Duration of Hackathon:</label>
-        <input type="text" id="duration" placeholder="Example: 24 Hours / 2 Days" required>
+        <div class="team-status">
+          <span>Team Size: 3 / 5</span>
+          <span>Status: In Progress</span>
+        </div>
+      </div>
 
-        <button type="submit" class="create-post-btn">CREATE POST</button>
-      </form>
-    </div>
-  </div>
+      <!-- Members and Project Overview -->
+      <div class="collaboration-top">
+        <!-- Team Members -->
+        <div class="collaboration-card members-card">
+          <h2>Team Members</h2>
 
-  <div class="team-demo-posts">
-  <div class="team-demo-post">
-  <div class="post-header">
-    <h2>Smart Campus Management</h2>
-    <p>Created by: Rahul Sharma</p>
-  </div>
-  <p><strong>Hackathon:</strong> Smart India Hackathon</p>
-  <p><strong>Project Title:</strong> Smart Campus Management System</p>
-  <p class="description"> A project to develop a smart solution that improves campus facilities and makes student life easier.</p>
+          <div class="member">
+            <div class="member-icon">
+              <i class="bx bx-user"></i>
+            </div>
 
-  <div class="post-details">
-    <p><strong>Team Size:</strong> 3 / 5 Members</p>
-    <p>
-      <strong>Required Skills:</strong>
-      <span class="skill">HTML</span>
-      <span class="skill">CSS</span>
-      <span class="skill">JavaScript</span>
-      <span class="skill">Python</span>
-    </p>
-    <p><strong>Mode:</strong> Offline</p>
-    <p><strong>Venue:</strong> CMRIT Hyderabad</p>
-    <p><strong>Duration:</strong> 24 Hours</p>
-    <p><strong>Created:</strong> 2 hours ago</p>
-  </div>
+            <div class="member-info">
+              <h3>Rahul Sharma</h3>
+              <p>Team Leader</p>
+              <span>Python • JavaScript</span>
+            </div>
+          </div>
 
-  <div class="post-actions">
-    <button type="button">
-      <i class='bx bx-heart'></i> Like
-    </button>
+          <div class="member">
+            <div class="member-icon">
+              <i class="bx bx-user"></i>
+            </div>
 
-    <button type="button">
-      <i class='bx bx-comment'></i> Comments
-    </button>
+            <div class="member-info">
+              <h3>Ananya</h3>
+              <p>Frontend Developer</p>
+              <span>HTML • CSS • JavaScript</span>
+            </div>
+          </div>
 
-    <button type="button">
-      <i class='bx bx-share'></i> Share
-    </button>
+          <div class="member">
+            <div class="member-icon">
+              <i class="bx bx-user"></i>
+            </div>
 
-    <button type="button" class="join-btn">
-      Join Team
-    </button>
-  </div>
-</div>
-  <div class="team-demo-post">
+            <div class="member-info">
+              <h3>Arjun</h3>
+              <p>Backend Developer</p>
+              <span>Python • SQL</span>
+            </div>
+          </div>
+        </div>
 
-  <div class="post-header">
-    <h2>AI Based Health Assistant</h2>
-    <p>Created by: Ananya</p>
-  </div>
+        <!-- Project Overview -->
+        <div class="collaboration-card overview-card">
+          <h2>Project Overview</h2>
 
-  <p><strong>Hackathon:</strong> Tech Innovation Challenge</p>
-  <p><strong>Project Title:</strong> AI Health Assistant</p>
-  <p class="description">
-    A smart application that uses AI to provide useful health
-    information and help users understand common health concerns.
-  </p>
-  <div class="post-details">
-    <p><strong>Team Size:</strong> 2 / 4 Members</p>
-    <p>
-      <strong>Required Skills:</strong>
-      <span class="skill">Python</span>
-      <span class="skill">AI/ML</span>
-      <span class="skill">HTML</span>
-      <span class="skill">SQL</span>
-    </p>
+          <div class="overview-item">
+            <i class="bx bx-code-alt"></i>
+            <div>
+              <h3>Project</h3>
+              <p>Smart Campus Management System</p>
+            </div>
+          </div>
 
-    <p><strong>Mode:</strong> Online</p>
-    <p><strong>Duration:</strong> 48 Hours</p>
-    <p><strong>Created:</strong> 5 hours ago</p>
-  </div>
+          <div class="overview-item">
+            <i class="bx bx-trophy"></i>
+            <div>
+              <h3>Hackathon</h3>
+              <p>Smart India Hackathon</p>
+            </div>
+          </div>
 
-  <div class="post-actions">
+          <div class="overview-item">
+            <i class="bx bx-time"></i>
+            <div>
+              <h3>Deadline</h3>
+              <p>24 Hours</p>
+            </div>
+          </div>
 
-    <button type="button">
-      <i class='bx bx-heart'></i> Like
-    </button>
+          <div class="overview-item">
+            <i class="bx bx-loader-circle"></i>
+            <div>
+              <h3>Project Status</h3>
+              <p class="status-progress">In Progress</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <button type="button">
-      <i class='bx bx-comment'></i> Comments
-    </button>
+      <!-- Team Discussion -->
+      <div class="collaboration-card discussion-card">
+        <div class="section-title">
+          <h2>Team Discussion</h2>
+          <span>3 Members</span>
+        </div>
 
-    <button type="button">
-      <i class='bx bx-share'></i> Share
-    </button>
+        <div class="messages">
+          <div class="message">
+            <div class="message-user">
+              <i class="bx bx-user-circle"></i>
+              <strong>Rahul Sharma</strong>
+              <small>10:30 AM</small>
+            </div>
 
-    <button type="button" class="join-btn">
-      Join Team
-    </button>
+            <p>Let's complete the homepage design today.</p>
+          </div>
 
-  </div>
+          <div class="message">
+            <div class="message-user">
+              <i class="bx bx-user-circle"></i>
+              <strong>Ananya</strong>
+              <small>10:32 AM</small>
+            </div>
 
-</div>
-</div>
-</section>
+            <p>I'll handle the frontend part and update the team.</p>
+          </div>
+
+          <div class="message">
+            <div class="message-user">
+              <i class="bx bx-user-circle"></i>
+              <strong>Arjun</strong>
+              <small>10:35 AM</small>
+            </div>
+
+            <p>I'll work on the database structure.</p>
+          </div>
+        </div>
+
+        <!-- Message Box -->
+        <div class="message-input">
+          <input type="text" placeholder="Type your message..." />
+
+          <button type="button">
+            <i class="bx bx-send"></i>
+            Send
+          </button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
